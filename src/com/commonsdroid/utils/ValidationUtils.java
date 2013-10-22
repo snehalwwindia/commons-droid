@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 /**
  * The Class <code>ValidationUtils.</code>.<br/>
  * provides utility methods to perform some common bitmap operations
- * @author Snehal Penurkar
  * @version 12.10.2013
  */
 public class ValidationUtils {
@@ -21,7 +20,7 @@ public class ValidationUtils {
 					
 	/**
 	 * Validation for email. for Android2.2 onwards android.util.Pattern
-	 * 
+	 * @author Snehal Penurkar
 	 * @param email
 	 * @return true if email is valid email
 	 */
