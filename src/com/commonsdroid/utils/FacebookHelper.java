@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Locale;
 
 import android.app.Activity;
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -36,6 +37,7 @@ import com.facebook.model.GraphObject;
 import com.facebook.model.GraphUser;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+
 
 /**
  * This class has utility to post string or photo to Facebook timeline of user.
