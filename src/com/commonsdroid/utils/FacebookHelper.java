@@ -20,6 +20,20 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.widget.Toast;
+
+import com.facebook.FacebookRequestError;
+import com.facebook.Request;
+import com.facebook.Request.Callback;
+import com.facebook.Response;
+import com.facebook.Session;
+import com.facebook.SessionDefaultAudience;
+import com.facebook.SessionLoginBehavior;
+import com.facebook.SessionState;
+import com.facebook.internal.ImageRequest;
+import com.facebook.internal.SessionTracker;
+import com.facebook.internal.Utility;
+import com.facebook.model.GraphObject;
+import com.facebook.model.GraphUser;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
