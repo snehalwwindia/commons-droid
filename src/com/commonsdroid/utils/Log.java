@@ -11,15 +11,22 @@ import java.util.Date;
 
 import android.os.Environment;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author vishal vyas
+ * The Class Log.
  *
+ * @author vishal vyas
  */
 public class Log {
 
 	// Configuration variables
+	/** The write to sd card. */
 	public static boolean writeToSdCard = false;
+	
+	/** The project name. */
 	public static String projectName = null;
+	
+	/** The log file name. */
 	private static String logFileName = null;
 
 	static {
@@ -34,69 +41,120 @@ public class Log {
 		}
 	}
 
-	// Constants
+	/** The Constant TAG_DEBUG. */
 	public static final String TAG_DEBUG = "d" + projectName;
+	
+	/** The Constant TAG_ERROR. */
 	public static final String TAG_ERROR = "e" + projectName;
+	
+	/** The Constant TAG_INFO. */
 	public static final String TAG_INFO = "i" + projectName;
 	
+	/** The Constant format. */
 	private static final String format = "yyyy-MM-dd hh:mm:ss";
 
+	/** The date. */
 	private static Date date;
+	
+	/** The sdf. */
 	private static SimpleDateFormat sdf;
 
+	/** The sd card. */
 	private static File sdCard;
+	
+	/** The log file. */
 	private static File logFile;
 
+	/** The string writer. */
 	private static StringWriter stringWriter;
+	
+	/** The print writer. */
 	private static PrintWriter printWriter;
+	
+	/** The str exception. */
 	private static String strException = null;
 
 	
 	/**
-	 * @param e
+	 * D.
+	 *
+	 * @param e the e
 	 */
 	public static void d(Exception e) {
-		strException = execToString(e);
+		strException = execptionToString(e);
 		writeLog(TAG_DEBUG + " " + strException);
 		android.util.Log.d(TAG_DEBUG, strException);
 	}
 
+	/**
+	 * D.
+	 *
+	 * @param strValue the str value
+	 */
 	public static void d(String strValue) {
 		writeLog(TAG_DEBUG + " " + strValue);
 		android.util.Log.d(TAG_DEBUG, strValue);
 	}
 
+	/**
+	 * D.
+	 *
+	 * @param tag the tag
+	 * @param strValue the str value
+	 */
 	public static void d(String tag, String strValue) {
 		writeLog(tag + " " + strValue);
 		android.util.Log.d(tag, strValue);
 	}
 
+	/**
+	 * I.
+	 *
+	 * @param e the e
+	 */
 	public static void i(Exception e) {
-		strException = execToString(e);
+		strException = execptionToString(e);
 		writeLog(TAG_INFO + " " + strException);
 		android.util.Log.i(TAG_INFO, strException);
 	}
 
+	/**
+	 * I.
+	 *
+	 * @param strValue the str value
+	 */
 	public static void i(String strValue) {
 		writeLog(TAG_INFO + " " + strValue);
 		android.util.Log.i(TAG_INFO, strValue);
 	}
 
+	/**
+	 * E.
+	 *
+	 * @param e the e
+	 */
 	public static void e(Exception e) {
-		strException = execToString(e);
+		strException = execptionToString(e);
 		writeLog(TAG_ERROR + " " + strException);
 		android.util.Log.e(TAG_ERROR, strException);
 	}
 
+	/**
+	 * E.
+	 *
+	 * @param strValue the str value
+	 */
 	public static void e(String strValue) {
 		writeLog(TAG_ERROR + " " + strValue);
 		android.util.Log.e(TAG_ERROR, strValue);
 	}
 
-	/*
-	 * Maintain exceptions in SDCard.
+	/**
+	 * Writes logs and exceptions in SDCard.
 	 * 
 	 * What if external storage is not available?
+	 *
+	 * @param strValue the string value
 	 */
 	private static void writeLog(String strValue) {
 		if (writeToSdCard) {
@@ -146,7 +204,13 @@ public class Log {
 	/*
 	 * Convert exception to string.
 	 */
-	private static String execToString(Exception e) {
+	/**
+	 * Convert's Exception to string
+	 *
+	 * @param e the exception
+	 * @return the string representation of Exception
+	 */
+	public static String execptionToString(Exception e) {
 		if (null == stringWriter) {
 			stringWriter = new StringWriter();
 		}

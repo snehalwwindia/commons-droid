@@ -20,8 +20,18 @@ import android.net.wifi.WifiManager;
 import android.provider.Settings;
 import android.text.format.Formatter;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class NetworkHelper.
+ */
 public class NetworkHelper {
 
+	/**
+	 * Checks if is network available.
+	 *
+	 * @param ctx the ctx
+	 * @return true, if is network available
+	 */
 	public static boolean isNetworkAvailable(Context ctx) {
 		/** This method returns the network state */
 		ConnectivityManager connectivityManager = (ConnectivityManager) ctx
@@ -31,6 +41,12 @@ public class NetworkHelper {
 		return activeNetworkInfo != null && activeNetworkInfo.isConnected();
 	}
 
+	/**
+	 * Gets the local ip address.
+	 *
+	 * @param context the context
+	 * @return the local ip address
+	 */
 	public static String getLocalIpAddress(Context context) {
 		/** This method returns the Local IP address */
 		WifiManager wifiMgr = (WifiManager) context
@@ -42,6 +58,12 @@ public class NetworkHelper {
 		return address;
 	}
 
+	/**
+	 * Gets the network ip address.
+	 *
+	 * @param useIPv4 the use i pv4
+	 * @return the network ip address
+	 */
 	public static String getNetworkIPAddress(boolean useIPv4) {
 		/** This method returns the Network IP address */
 		try {
@@ -73,12 +95,24 @@ public class NetworkHelper {
 		return "";
 	}
 
+	/**
+	 * Checks if is airplane mode on.
+	 *
+	 * @param context the context
+	 * @return true, if is airplane mode on
+	 */
 	public static boolean isAirplaneModeOn(Context context) {
 		/** This method returns true if Airplane mode is ON */
 		return Settings.System.getInt(context.getContentResolver(),
 				Settings.System.AIRPLANE_MODE_ON, 0) != 0;
 	}
 
+	/**
+	 * Gets the available network info.
+	 *
+	 * @param context the context
+	 * @return the available network info
+	 */
 	public static String getAvailableNetworkInfo(Context context) {
 		ConnectivityManager conMan = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
